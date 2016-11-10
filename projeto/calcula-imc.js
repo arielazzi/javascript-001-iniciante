@@ -1,21 +1,24 @@
 
-var tdPeso = document.getElementById("peso-1").textContent;
-var tdAltura = document.getElementById("altura-1").textContent;
-var nome = document.getElementById("nome-1").textContent;
+var trsPacientes = document.getElementsByClassName("paciente");
 
-var paciente = {
-				nome   : nome,
-				peso   : tdPeso,
-				altura : tdAltura
-};
+for (var posicao = 0; posicao <= trsPacientes.length - 1; posicao++) {
 
-if (paciente.altura != 0)
-{
-	var imc = paciente.peso / (paciente.altura * paciente.altura);
-	var tdImc = document.getElementById("imc-1");
-	tdImc.textContent = imc; 
-}
-else
-{
-    console.log("Não posso executar uma divisão por 0!");
+	var pacienteTr = trsPacientes[posicao];
+	var tdNome = pacienteTr.getElementsByClassName("info-nome")[0].textContent;
+	var tdPeso = pacienteTr.getElementsByClassName("info-peso")[0].textContent;
+	var tdAltura = pacienteTr.getElementsByClassName("info-altura")[0].textContent;
+
+	var paciente = { nome : tdNome, peso : tdPeso, altura : tdAltura}; 
+
+	if (paciente.altura != 0)
+	{
+		var imc = paciente.peso / (paciente.altura * paciente.altura);
+
+		var tdImc = pacienteTr.getElementsByClassName("info-imc")[0];
+		tdImc.textContent = imc; 
+	}
+	else
+	{
+	    console.log("Não posso executar uma divisão por 0!");
+	}
 }
