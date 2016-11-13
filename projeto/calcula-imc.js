@@ -2,7 +2,8 @@ var trsPacientes = document.getElementsByClassName("paciente");
 
 
 
-percorreArray(trsPacientes, function(pacienteTr){
+percorreArray(trsPacientes, function(pacienteTr)
+{
 
 	var tdNome = pacienteTr.getElementsByClassName("info-nome")[0].textContent;
 	var tdPeso = pacienteTr.getElementsByClassName("info-peso")[0].textContent;
