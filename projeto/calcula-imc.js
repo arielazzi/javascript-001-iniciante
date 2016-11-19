@@ -27,5 +27,4 @@ botao.addEventListener("click", function()
 		tdImc.textContent = imc; 
 	});
 	
-}
-);
+});
